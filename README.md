@@ -293,3 +293,11 @@ var foo = function foo() {
   _classCallCheck(this, foo);
 };
 ```
+
+### 加入ESLint
+
+* 安裝ESLint
+
+```bash
+npm install --save-dev eslint
+```
