@@ -256,3 +256,40 @@ npm run build
 ```
 
 * 在瀏覽器開啟`index.html`，會出現`Hello Vue!`的字串
+
+### webpack引入Babel
+
+* Install Babel
+
+```bash
+npm install --save-dev babel-core babel-loader babel-preset-env
+```
+
+* 在root新增.babelrc
+
+```js
+{
+  "presets": ["env"]
+}
+```
+
+* 建置webpack
+
+```bash
+npm run build
+```
+
+### 測試Babel是否運作
+
+* 在App.vue的script加上`class foo{}`
+* 執行webpack
+* 點開dist/build.js
+* 搜尋foo
+* 失敗依然是`class foo {}`
+* 成功: 會轉為下面的程式碼
+
+```js
+var foo = function foo() {
+  _classCallCheck(this, foo);
+};
+```
