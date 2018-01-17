@@ -301,3 +301,11 @@ var foo = function foo() {
 ```bash
 npm install --save-dev eslint
 ```
+
+* 使用ESLint提供的互動介面完成設置
+
+```bash
+npx eslint --init
+```
+
+此庫使用[airbnb/javascript](https://github.com/airbnb/javascript) Code Style。
