@@ -309,3 +309,60 @@ npx eslint --init
 ```
 
 此庫使用[airbnb/javascript](https://github.com/airbnb/javascript) Code Style。
+
+* 輸入指令驗證ESLint
+
+```bash
+npx eslint src/main.js
+```
+
+* 應該輸出
+
+```bash
+✖ 6 problems (6 errors, 0 warnings)
+  5 errors, 0 warnings potentially fixable with the `--fix` option.
+```
+
+### ESLint加入eslint-plugin-vue
+
+* 安裝eslint-plugin-vue
+
+```bash
+npm install --save-dev eslint-plugin-vue
+```
+
+* 修改.eslintrc.js
+
+```js
+module.exports = {
+    "extends": [
+      "airbnb-base",
+      "plugin:vue/recommended"  // 增加vue code style
+    ]
+};
+```
+
+* 輸入指令驗證Vue Code Style有被ESLint吃到
+
+```bash
+npx eslint src/App.vue
+```
+
+* 應該輸出
+
+```bash
+✖ 6 problems (6 errors, 0 warnings)
+  5 errors, 0 warnings potentially fixable with the `--fix` option.
+```
+
+### ESLint Visual Studio Code插件在.vue沒有作用
+
+調整ESLint插件的config
+
+```js
+"eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue" // 讓eslint可以吃到vue檔
+]
+```
