@@ -394,3 +394,33 @@ module.exports = {
   ...
 }
 ```
+
+### 加上Flow
+
+* 安裝
+
+```bash
+npm install --save-dev flow-bin
+```
+
+* 初始
+
+```bash
+npx flow init
+```
+
+這指令會幫我們建立一個.flowconfig
+
+* 將node_modules排除，修改Flow
+
+```
+[ignore]
+.*/node_modules/.*
+...
+```
+
+* 使用Flow
+
+```bash
+npx flow
+```
