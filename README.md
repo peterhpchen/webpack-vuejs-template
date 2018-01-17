@@ -424,3 +424,5 @@ npx flow init
 ```bash
 npx flow
 ```
+
+* 如果指令沒有作用時，到工作管理員裡把flow的程序結束再重跑
