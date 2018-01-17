@@ -366,3 +366,31 @@ npx eslint src/App.vue
     "vue" // 讓eslint可以吃到vue檔
 ]
 ```
+
+### webpack在build之前執行eslint檢查
+
+* 安裝eslint-loader
+
+```bash
+npm install --save-dev eslint-loader
+```
+
+* 在webpack.config.js中加入下面的設定
+
+```js
+...
+module.exports = {
+  ...
+  module: {
+    rules: [
+      {
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        enforce: 'pre'
+      },
+      ...
+    ]
+  },
+  ...
+}
+```
