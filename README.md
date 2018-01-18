@@ -395,7 +395,7 @@ module.exports = {
 }
 ```
 
-### 加上Flow
+### 加上Flow(跟SFC無法整合，先忽略)
 
 * 安裝
 
@@ -426,3 +426,34 @@ npx flow
 ```
 
 * 如果指令沒有作用時，到工作管理員裡把flow的程序結束再重跑
+
+## 設定Vetur
+
+* 在root新增jsconfig.json
+
+```js
+{
+  "include": [
+    "./src/**/*"
+  ]
+}
+```
+
+* lint
+
+將剛剛的eslint.validate設定改為
+
+```js
+"eslint.validate": [
+  "javascript",
+  "javascriptreact",
+  {
+    "language": "vue",
+    "autoFix": true
+  },
+]
+```
+
+* lint template
+
+* vetur.validation.template: false
