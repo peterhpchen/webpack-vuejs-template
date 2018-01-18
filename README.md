@@ -457,3 +457,5 @@ npx flow
 * lint template
 
 * vetur.validation.template: false
+
+* 將"eslint.autoFixOnSave": true可以自動fix style問題
